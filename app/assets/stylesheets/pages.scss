@@ -5,3 +5,17 @@
 body {
     // background-color: tomato;
 }
+
+.custom-notification {
+    h2 {
+        font-size: 18px;
+        color: $black;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    ul {
+        li {
+            list-style: circle;
+        }
+    }
+}
