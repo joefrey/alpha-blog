@@ -4,38 +4,6 @@
     </div>
 </div>
 
-<% if @article.errors.any? %>
-<div class="notification custom-notification is-primary is-light">
-  <button class="delete"></button>
-  <h2 clsas="title is-3 mb-4">The following errors prevented the article from being saved</h2>
-  <ul>
-  <% @article.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-</div>
-<% end %> 
+<%= render 'form' %>
 
-<%= form_with(model: @article, local: true) do |f| %>
-  
-  <div class="field">
-    <%= f.label :title, 'Title', :class => 'label' %>
-    <div class="control">
-    <%= f.text_field :title, :class => 'input', :placeholder => 'Enter your title' %>
-    </div>
-  </div>
-
-  <div class="field">
-    <%= f.label :description, 'Article Description', :class => 'label' %>
-    <div class="control">
-    <%= f.text_area :description, :class => 'textarea', :placeholder => 'Writ your article here' %>
-    </div>
-  </div>
-
-  <div class="field">
-    <%= f.submit 'Update article', :class => 'button is-primary' %>
-  </div>
-
-  
-    
-<% end %>
+<%= link_to 'Cancel and return to articles listing', root_path  %>

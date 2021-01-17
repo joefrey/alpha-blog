@@ -1,7 +1,15 @@
 <div class="container">
 
   <div class="mb-5">
-    <h1 class="title is-2">Articles listing page</h1>
+    <div class="level">
+      <div class="level-left">
+        <h1 class="title is-2">Articles listing page</h1>
+      </div>
+      <div class="level-right">
+        <%= link_to 'Create article', {action: 'new'}, class: 'button is-primary' %>
+      </div>
+  </div>
+
   </div>
 
   <% @articles.each do |article| %>
@@ -17,7 +25,14 @@
     </div>
     <div class="level-right">
       <div class="level-item">
-        <button class="button is-danger">Delete</button>
+        <%= link_to 'Show', article_path(article) %>
+      </div>
+      <div class="level-item">
+        <%= link_to 'Edit', edit_article_path(article) %>
+      </div>
+      <div class="level-item">
+        
+        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: 'has-text-danger' %>
       </div>
     </div>
   </div>
