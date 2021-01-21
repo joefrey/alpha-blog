@@ -24,7 +24,7 @@
   </div>
 
   <div class="field">
-    <%= f.submit 'Sign up', :class => 'button is-primary' %>
+    <%= f.submit(@user.new_record? ? 'Sign up' : "Update Account", :class => 'button is-primary') %>
   </div>
 
   
