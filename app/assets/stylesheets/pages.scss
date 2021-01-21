@@ -19,3 +19,17 @@ body {
         }
     }
 }
+
+.profile {
+    text-align: center;
+    img {
+        border-radius: 50%;
+    }
+    .profile-pic {
+        margin-bottom: 40px;
+    }
+}
+
+.form, .custom-content {
+    padding: 40px;
+}

@@ -1,0 +1,20 @@
+
+<div class="columns is-mobile is-centered profile">
+  <div class="column is-half is-centered custom-content">
+    <h1 class="title is-2"><%= @user.username %>'s profile </h1>
+    <div class="profile-pic"><%= gravatar_for @user, size: 200 %></div>
+
+    <h2 class="title is-3 mb-5">Articles</h2>
+    
+    
+
+  </div>
+
+  
+</div>
+
+<div class="columns">
+  <div class="column is-full">
+    <%= render 'articles/article' %>
+  </div>
+</div>
