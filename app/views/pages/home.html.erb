@@ -19,9 +19,15 @@
     <div class="level box">
       <div class="level-left">
         <div class="level-item">
+          
           <div>
-          <h2 class="title is-size-4-tablet"><%= article.title %></h2>
+          <h2 class="title is-size-4-tablet">
+            <%= link_to article.title, article_path(article) %>
+          </h2>
           <p><%= article.description %></p>
+          <div class="user">
+            by <%= article.user.username if article.user %>
+          </div>
         </div>
         </div>
       </div>
