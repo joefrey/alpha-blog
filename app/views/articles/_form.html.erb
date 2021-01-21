@@ -1,14 +1,5 @@
-<% if @article.errors.any? %>
-<div class="notification custom-notification is-primary is-light">
-  <button class="delete"></button>
-  <h2 clsas="title is-3 mb-4">The following errors prevented the article from being saved</h2>
-  <ul>
-  <% @article.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-</div>
-<% end %> 
+
+<%= render 'shared/errors', obj: @article %>
 
 <%= form_with(model: @article, local: true) do |f| %>
   

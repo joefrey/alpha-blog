@@ -8,4 +8,9 @@ Rails.application.routes.draw do
 
   # resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   resources :articles
+  get 'signup', to: 'users#new'
+
+  # intestead of this try to use resources with except 
+  # post 'users', to: 'users/#create'
+  resources :users, except: [:new]
 end
