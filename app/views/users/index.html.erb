@@ -1,0 +1,42 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-full is-centered box form">     
+    <h1 class="title is-2 mb-5">Alpha Bloggers</h1>
+  </div>
+</div>
+
+<% @users.each do |user| %>
+
+    <div class="level box">
+      <div class="level-left">
+        <div class="level-item">
+          
+          <div>
+          <h2 class="title is-size-4-tablet">
+            
+            <%= link_to user.username, user_path(user) %> <small class="title is-6"> <%= pluralize(user.articles.count, 'article') %></small>
+          </h2>
+        
+            <div>
+            <div>
+            <% #  user_path(user) or just put user %>
+            <%= link_to gravatar_for(user, size: 140), user  %>
+            </div>
+            <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <%= link_to 'Show', user_path(user) %>
+        </div>
+        <div class="level-item">
+          <%= link_to 'Edit', edit_user_path(user) %>
+        </div>
+        <div class="level-item">
+          
+          <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: 'has-text-danger' %>
+        </div>
+      </div>
+    </div>
+    <% end %>
